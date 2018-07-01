@@ -232,7 +232,7 @@ func (codec *int8Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *int8Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*int8)(ptr)) == 0
+	return ptr == nil
 }
 
 type int16Codec struct {
@@ -249,7 +249,7 @@ func (codec *int16Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *int16Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*int16)(ptr)) == 0
+	return ptr == nil
 }
 
 type int32Codec struct {
@@ -266,7 +266,7 @@ func (codec *int32Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *int32Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*int32)(ptr)) == 0
+	return ptr == nil
 }
 
 type int64Codec struct {
@@ -283,7 +283,8 @@ func (codec *int64Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *int64Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*int64)(ptr)) == 0
+	return ptr == nil
+	//return *((*int64)(ptr)) == 0
 }
 
 type uint8Codec struct {
@@ -300,7 +301,8 @@ func (codec *uint8Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *uint8Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*uint8)(ptr)) == 0
+	return ptr == nil
+	//return *((*uint8)(ptr)) == 0
 }
 
 type uint16Codec struct {
@@ -317,7 +319,8 @@ func (codec *uint16Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *uint16Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*uint16)(ptr)) == 0
+	return ptr == nil
+	//return *((*uint16)(ptr)) == 0
 }
 
 type uint32Codec struct {
@@ -334,7 +337,8 @@ func (codec *uint32Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *uint32Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*uint32)(ptr)) == 0
+	return ptr == nil
+	//return *((*uint32)(ptr)) == 0
 }
 
 type uint64Codec struct {
@@ -351,7 +355,8 @@ func (codec *uint64Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *uint64Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*uint64)(ptr)) == 0
+	return ptr == nil
+	//return *((*uint64)(ptr)) == 0
 }
 
 type float32Codec struct {
@@ -368,7 +373,8 @@ func (codec *float32Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *float32Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*float32)(ptr)) == 0
+	return ptr == nil
+	//return *((*float32)(ptr)) == 0
 }
 
 type float64Codec struct {
@@ -385,7 +391,8 @@ func (codec *float64Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *float64Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return *((*float64)(ptr)) == 0
+	return ptr == nil
+	// return *((*float64)(ptr)) == 0
 }
 
 type boolCodec struct {
@@ -402,7 +409,7 @@ func (codec *boolCodec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *boolCodec) IsEmpty(ptr unsafe.Pointer) bool {
-	return !(*((*bool)(ptr)))
+	return false
 }
 
 type base64Codec struct {
@@ -447,5 +454,6 @@ func (codec *base64Codec) Encode(ptr unsafe.Pointer, stream *Stream) {
 }
 
 func (codec *base64Codec) IsEmpty(ptr unsafe.Pointer) bool {
-	return len(*((*[]byte)(ptr))) == 0
+	return ptr == nil
+	//return len(*((*[]byte)(ptr))) == 0
 }
